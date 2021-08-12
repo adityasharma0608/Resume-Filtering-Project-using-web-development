@@ -1,0 +1,20 @@
+<section id="gigs" class="container">
+    <h1>All Resume</h1>
+
+    {{#each gigs}}
+      <div class="gig">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <ul>
+        {{!-- <li>Expected Salary: {{budget}}</li> --}}
+        <li><a href="mailto:{{contact_email}}" class="btn btn-reverse">Contact</a></li>
+      </ul>
+      <div class="tech">
+        <small>Skills: <span>{{technologies}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No Resumes</p>
+    {{/each}}
+    
+  </section>

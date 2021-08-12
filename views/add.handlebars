@@ -1,0 +1,37 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add Resume</h1>
+      <p>Create your Resume Here</p>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/gigs/add" method="POST">
+        <div class="input-group">
+          <label for="title">Name</label>
+          <input type="text" name="title" id="title" class="input-box" placeholder="eg. Harry Smith"
+            maxlength="100" value={{title}}>
+        </div>
+        <div class="input-group">
+          <label for="technologies">Skills</label>
+          <input type="text" name="technologies" id="technologies" class="input-box" placeholder="eg. javascript, react, PHP"
+          maxlength="100" value={{technologies}}>
+        </div>
+        {{!-- <div class="input-group">
+          <label for="budget">Expected Salary</label>
+          <input type="number" name="budget" id="budget" class="input-box" placeholder="eg. 500, 5000, 10000" value={{budget}}>
+        </div> --}}
+        <div class="input-group">
+          <label for="description">About</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Tell us about yourself and your ambitions"
+            rows="10">{{description}}</textarea>
+        </div>
+        <div class="input-group">
+          <label for="budget">Contact Email</label>
+          <input type="email" name="contact_email" id="contactemail" class="input-box" placeholder="Enter an email" value={{contact_email}}>
+        </div>
+        <input type="submit" value="Add Resume" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>
